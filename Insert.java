@@ -31,7 +31,7 @@ public class Insert extends Query{
   
             bw.write(data.toJSONString());  
             bw.flush();  
-            bw.close();  
+            //bw.close();  
   
         } 
         catch (IOException e) {  
