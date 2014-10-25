@@ -9,7 +9,12 @@ public class Find extends Query implements Comparator<JSONObject>{
         // if statement to check the condition given as the
         // argument in the constructor and call the further methods given
     }
-    public int compare(JSONObject a, JSONOBject b,String key)
+    public JSONArray satisfies(){
+        //returns the JSONArray of JSONObjects in dat awhich specify the input conditions 
+        //conditions=findData
+        //use equals,greater and less 
+    }
+    private int compare(JSONObject a, JSONOBject b,String key)
     {
         //valA and valB could be any simple type, such as number, string, whatever
         String valA = a.get(key);
@@ -21,7 +26,7 @@ public class Find extends Query implements Comparator<JSONObject>{
             return -1;
         return 0;    
     }
-    public JSONArray greater(String key){
+    private JSONArray greater(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
@@ -30,7 +35,7 @@ public class Find extends Query implements Comparator<JSONObject>{
         }
         return satisfies;
     }
-    public JSON less(String key){
+    private JSON less(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
@@ -39,7 +44,7 @@ public class Find extends Query implements Comparator<JSONObject>{
         }
         return satisfies;
     }
-    public JSON equal(String key){
+    private JSON equal(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
