@@ -9,8 +9,8 @@ public class Find extends Query implements Comparator<JSONObject>{
         // if statement to check the condition given as the
         // argument in the constructor and call the further methods given
     }
-    public JSONArray satisfies(){
-        //returns the JSONArray of JSONObjects in dat awhich specify the input conditions 
+    public int[] satisfies(){
+        //returns the indices of JSONObjects in data awhich specify the input conditions 
         //conditions=findData
         //use equals,greater and less 
     }
