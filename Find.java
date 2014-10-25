@@ -1,20 +1,52 @@
-public class Find extends Query{
+public class Find extends Query implements Comparator<JSONObject>{
     private String findData;
-    private JSON data;
-    public Find(String fd,JSON object){
+    private JSONArray data;
+    private JOSNObject input;
+    public Find(String fd,JSONObject object){
         findData=fd;
-        data=object;
+        input=object;
+        
         // if statement to check the condition given as the
         // argument in the constructor and call the further methods given
     }
-    public JSON greater(JSON object){
-        // render the documents and store the required objects in an array
+    public int compare(JSONObject a, JSONOBject b,String key)
+    {
+        //valA and valB could be any simple type, such as number, string, whatever
+        String valA = a.get(key);
+        String valB = b.get(key);
+
+        if(valA > valB)
+            return 1;
+        if(valA < valB)
+            return -1;
+        return 0;    
     }
-    public JSON less(JSON object){
+    public JSONArray greater(String key){
         // render the documents and store the required objects in an array
+        JSONArray satisfies=new JSONArray();
+        for each_jsonobject in data{
+            if(compare(input,each_jsonobject,key)==1)
+                satisfies(end+1)=each_jsonobject;
+        }
+        return satisfies;
     }
-    public JSON equal(JSON object){
+    public JSON less(String key){
         // render the documents and store the required objects in an array
+        JSONArray satisfies=new JSONArray();
+        for each_jsonobject in data{
+            if(compare(input,each_jsonobject,key)==-1)
+                satisfies(end+1)=each_jsonobject;
+        }
+        return satisfies;
+    }
+    public JSON equal(String key){
+        // render the documents and store the required objects in an array
+        JSONArray satisfies=new JSONArray();
+        for each_jsonobject in data{
+            if(compare(input,each_jsonobject,key)==0)
+                satisfies(end+1)=each_jsonobject;
+        }
+        return satisfies; 
     }
 
 }
