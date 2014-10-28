@@ -1,6 +1,6 @@
 public class Query{
-    private String dName;
-    private String tName;
+    protected String dName;
+    protected String tName;
     public Query(String d,String t){
         dName=d;
         tName=t;
@@ -11,15 +11,23 @@ public class Query{
     }
     public Insert insert(JSON object){
         /**/
+        Query insNew = new Insert(object);
+        return insNew;
     }
     public Find find(String f,JSON object){
         /**/
+        Query findNew = new Find(f,object);
+        return findNew;
     }
     public Delete delete(String d,JSON object){
         /**/
+        Query delNew = new Insert(d,object);
+        return delNew;
     }
     public Update update(String u,JSON object1,JSON object2){
         /**/
+        Query updNew = new Insert(u,object1,object2);
+        return updNew;
     }
 
 }
