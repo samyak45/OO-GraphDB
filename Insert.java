@@ -13,8 +13,8 @@ public class Insert extends Query{
 
     public Insert(JSONObject object){
         data=object;
-
-        FileControl.writeToFile(super.dname,super.tname,data,true);
+        if(object != NULL)
+            FileControl.writeToFile(super.dname,super.tname,data,true);
     }
     //helper functions
 }
