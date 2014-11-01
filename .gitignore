@@ -1,7 +1,8 @@
 # Java class files
 *.class
 
-
+# Gson Library
+*.jar
 
 # files for the dex VM
 *.dex
