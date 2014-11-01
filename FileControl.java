@@ -11,7 +11,7 @@
 
   public class FileControl {
 
-    public static Map readFromFile(String dname, String tname,JSONObject data){  
+    public static JSONArray readFromFile(String dname, String tname){  
     
       JSONParser parser = new JSONParser();  
       
@@ -57,13 +57,8 @@
         File file = new File(tname);
         // Writing to a file  
         // got to dname directory
-        if(!isAppend){
-          boolean success = file.delete();
-          if(success){
-            file = new File(tname);
-          }
-        }
-        FileWriter writer=new FileWriter(file,true);//name of the file  
+        FileWriter writer = new FileWriter(file,isAppend);//name of the file 
+
         BufferedWriter bw = new BufferedWriter(writer);   
         bw.write(data.toJSONString());  
         bw.flush();  
