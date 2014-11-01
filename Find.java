@@ -1,19 +1,36 @@
 public class Find extends Query implements Comparator<JSONObject>{
     private String findData;
-    private JSONArray data;
+    private JSONArray data;//result
     private JOSNObject input;
     public Find(String fd,JSONObject object){
         findData=fd;
         input=object;
-        
+        find();
         // if statement to check the condition given as the
         // argument in the constructor and call the further methods given
     }
-    public int[] satisfies(){
-        //returns the indices of JSONObjects in data awhich specify the input conditions 
-        //conditions=findData
-        //use equals,greater and less 
+    private void find(){
+        if(findData=="gt") greater();
+        else if(findData=="lt") less();
+        else if(findData=="eq") equal();
+        // extend functionality if time permits
     }
+    public JSONArray sortBy(String key,boolean asc){
+        //
+    }
+    public JSONArray getData(){
+        //returns data
+    }
+    private void greater(){
+
+    }
+    private void less(){
+
+    }
+    private void equal(){
+        
+    }
+    /*
     private int compare(JSONObject a, JSONOBject b,String key)
     {
         //valA and valB could be any simple type, such as number, string, whatever
@@ -26,7 +43,7 @@ public class Find extends Query implements Comparator<JSONObject>{
             return -1;
         return 0;    
     }
-    private JSONArray greater(String key){
+    private int[] greater(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
@@ -35,7 +52,7 @@ public class Find extends Query implements Comparator<JSONObject>{
         }
         return satisfies;
     }
-    private JSON less(String key){
+    private int[] less(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
@@ -44,7 +61,7 @@ public class Find extends Query implements Comparator<JSONObject>{
         }
         return satisfies;
     }
-    private JSON equal(String key){
+    private int[] equal(String key){
         // render the documents and store the required objects in an array
         JSONArray satisfies=new JSONArray();
         for each_jsonobject in data{
@@ -53,5 +70,5 @@ public class Find extends Query implements Comparator<JSONObject>{
         }
         return satisfies; 
     }
-
+    */
 }

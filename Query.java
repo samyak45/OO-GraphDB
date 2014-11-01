@@ -1,6 +1,7 @@
 public class Query{
     protected String dName;
     protected String tName;
+    protected JSONArray fileData;
     public Query(String d,String t){
         dName=d;
         tName=t;
@@ -11,22 +12,22 @@ public class Query{
     }
     public Insert insert(JSON object){
         /**/
-        Query insNew = new Insert(object);
+        Insert insNew = new Insert(object);
         return insNew;
     }
     public Find find(String f,JSON object){
         /**/
-        Query findNew = new Find(f,object);
+        Find findNew = new Find(f,object);
         return findNew;
     }
     public Delete delete(String d,JSON object){
         /**/
-        Query delNew = new Insert(d,object);
+        Delete delNew = new Insert(d,object);
         return delNew;
     }
     public Update update(String u,JSON object1,JSON object2){
         /**/
-        Query updNew = new Insert(u,object1,object2);
+        Update updNew = new Insert(u,object1,object2);
         return updNew;
     }
 
