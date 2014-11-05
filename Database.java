@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Database {
 	private String name;
+	public static String baseDir="C://";
 	//private HashMap tables;
 	private int numTables;
 
@@ -22,7 +23,6 @@ public class Database {
 
 	public Table createTable(String tName) {
 		// create a new file with the name tName in folder name
-		// TODO : insert the name of the table to metadata
 		Table table = new Table(tName);
 		return table;
 	}
@@ -33,5 +33,17 @@ public class Database {
 		//return tables(tName);
 		return null;
 	}
+	public void initDB(){
+		File dir = new File(baseDir+name);
+		
+		boolean isDirectoryCreated = dir.mkdir();
+	   
+	     if(isDirectoryCreated)
+	       System.out.println("Empty DB created successfully");
+	     else
+	       System.out.println("Empty DB was not created successfully");
+	  }
 
-}
+	}
+
+
