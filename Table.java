@@ -7,6 +7,7 @@ public class Table {
 
 	public Table(String name) {
 		this.name = name;
+		// MetaData.update(false,tName);
 	}
 
 	public String getName() {
@@ -18,6 +19,7 @@ public class Table {
 	}
 
 	// create doc need not be created as it is already presented in Query
+
 	private void initTable() {
 		File file = new File(Database.baseDir + name + ".json");
 		boolean blnCreated = false;
@@ -26,7 +28,7 @@ public class Table {
 		} catch (IOException ioe) {
 			System.out.println("Error while creating a new empty file :" + ioe);
 		}
-	
+
 	}
 
 }
