@@ -25,17 +25,9 @@ import com.google.gson.Gson;
         Object obj = parser.parse(new FileReader(tname));// change to exact location of the file just written a prototype  
 
         JSONObject jsonObject = (JSONObject) obj; 
-        String data = jsonObject.get(tname).toString(); 
-        // TODO: send data via JSONArray instead of GSon
-        /*
-        Gson gson = new Gson();
-        Map <String,Object> mapData = new HashMap < String,Object >();
-        mapData = ( Map <String,Object> ) gson.fromJson(data,map.getClass());
-        
-        return mapData;
-        */
-        
-
+        //String data = jsonObject.get(tname).toString(); 
+        return (JSONArray)jsonObject.get(tname); 
+       
         // the data is stored like this 
         /*
 

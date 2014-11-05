@@ -16,7 +16,6 @@ public class Insert extends Query{
         if(object != NULL)
             FileControl.writeToFile(super.dname,super.tname,data,true);
     }
-    //helper functions
+    
 }
 
-// TODO : just touchups required

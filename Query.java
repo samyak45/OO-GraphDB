@@ -2,6 +2,7 @@ public class Query{
     protected String dName;
     protected String tName;
     protected JSONArray fileData;
+    public Query(){}
     public Query(String d,String t){
         dName=d;
         tName=t;

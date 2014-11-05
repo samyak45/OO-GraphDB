@@ -3,7 +3,7 @@ public class Delete extends Query{
     private JSONAray data;
     public Delete(String dl,JSON object){
         input=object;
-        //load data from file
+        
     };
     //helper functions
     
@@ -20,7 +20,7 @@ public class Delete extends Query{
         data=list;
     }
     public void deleteConditional(String conditions){
-        //brute force implementation follows, add optimized implementation latter
+        
         Find find=new Find(conditions,input);
         int[] indices=Find.satisfies();
         //sort(indices);

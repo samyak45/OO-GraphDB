@@ -39,5 +39,5 @@ public class Update extends Query {
 		}
 	}
 
-	// helper functions
+	
 }
