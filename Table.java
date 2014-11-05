@@ -4,6 +4,7 @@ public class Table{
 
     public Table(String name){
         this.name=name;
+        //MetaData.update(false,tName);
     }
     public String getName(){
         return name;

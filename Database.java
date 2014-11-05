@@ -8,6 +8,7 @@ public class Database {
 
 	public Database(String name) {
 		this.name = name;
+		MetaData.update();
 		// tables = new HashMap();
 		// create folder having the name name
 	}
@@ -24,6 +25,7 @@ public class Database {
 		// create a new file with the name tName in folder name
 		// TODO : insert the name of the table to metadata
 		Table table = new Table(tName);
+		MetaData.update(false,dName,tName);
 		return table;
 	}
 
