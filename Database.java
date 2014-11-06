@@ -10,6 +10,7 @@ public class Database {
 	public Database(String name) {
 		this.name = name;
 		MetaData.update(name);
+		this.initDB();
 		// tables = new HashMap();
 		// create folder having the name name
 	}
@@ -25,6 +26,7 @@ public class Database {
 	public Table createTable(String tName) {
 		// create a new file with the name tName in folder name
 		Table table = new Table(tName);
+		table.initTable();
 		MetaData.update(false,dName,tName);
 		return table;
 	}
