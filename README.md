@@ -1,2 +1,2 @@
-create a metadata that stores the maximum number of attributes in a table 
-// it will make it a schema though which i dont think is a gud idea.
+The project is the interface of an OO-DB using the concepts of object oriented programming.
+Storage mechanism has not been optimized for faster retrieval of data.
